@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Store/etc/config.xsd">
+	<default>
+		<wdph_genikitaxydromiki_general>
+			<login>			
+				<api_url>https://voucher.taxydromiki.gr/JobServicesV2.asmx?WSDL</api_url>
+                <appkey></appkey>
+                <username></username>
+                <password></password>
+			</login>
+			<general>
+				<delivery_method>tablerate_bestway</delivery_method>
+				<weight>2</weight>
+			</general>
+		</wdph_genikitaxydromiki_general>
+	</default>
+</config>

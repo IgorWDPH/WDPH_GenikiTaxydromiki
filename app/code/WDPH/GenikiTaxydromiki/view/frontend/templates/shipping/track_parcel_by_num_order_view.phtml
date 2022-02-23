@@ -1,0 +1,37 @@
+<?php
+//WDPH\GenikiTaxydromiki\Block\Shipping\TrackParcelByNumOrderView
+$tractions = $block->getTrackingData();
+?>
+<?php if($tractions && !empty($tractions)): ?>
+    <?php foreach($tractions as $traction): ?>
+        <?php if(array_key_exists('data', $traction) || array_key_exists('error_message', $traction)): ?>
+        <div class="block block-order-details-view">
+            <div class="block-title">
+                <strong><?= __('Shippment Tracking #' . $traction['pod']) ?></strong>
+            </div>
+            <div class="block-content">
+                <?php if(array_key_exists('error_message', $traction)): ?>
+                    <div class="voucher-error-message">
+                        <p><?php echo $traction['error_message']; ?></p>
+                    </div>
+                <?php endif; ?>
+                <?php if(array_key_exists('data', $traction)): ?>
+                    <div class="table-wrapper orders-recent">
+                        <table class="data table table-order-items recent">
+                            <caption class="table-caption"><?= __('Shippment Tracking') ?></caption>
+                            <tbody>
+                                <?php foreach($traction['data'] as $item): ?>
+                                    <tr>
+                                        <td class="col"><?php echo $item['date']; ?></td>
+                                        <td class="col"><?php echo $item['status']; ?></td>
+                                    </tr>
+                                <?php endforeach; ?> 
+                            </tbody>
+                        </table>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+        <?php endif; ?>
+    <?php endforeach; ?> 
+<?php endif; ?>

@@ -1,0 +1,46 @@
+<?php
+$result = $block->getTrackingData();
+?>
+<?php if(array_key_exists('error_message', $result)): ?>
+    <div class="voucher-error-message">
+        <p><?php echo $result['error_message']; ?></p>
+    </div>
+<?php endif; ?>
+<div id="search-for-voucher">
+    <form class="form voucher-search"
+            action="<?php echo $this->getUrl('genikitaxydromiki/shipping/trackparcelbynum', ['_secure' => true]);?>"
+            id="custom-form"
+            method="post"
+            data-hasrequired="<?php echo __('* Required Fields') ?>"
+            data-mage-init='{"validation":{}}'>
+        <fieldset class="fieldset">
+            <legend class="legend"><span><?php echo __('Shippment Tracking') . ' ' . (array_key_exists('pod', $result) ? '#' . $result['pod'] : '') ?></span></legend>
+            <div class="field pod required">
+                <label class="label" for="pod"><span><?php echo __('Voucher number') ?></span></label>
+                <div class="control">
+                    <input name="pod" id="pod" title="<?php echo __('Voucher number') ?>" class="input-text" type="text" data-validate="{required:true}"/>
+                </div>
+            </div>
+        </fieldset>
+        <div class="actions-toolbar">
+            <div class="primary">
+                <input type="hidden" name="hideit" id="hideit" value="" />
+                <button type="submit" title="<?php echo __('Search') ?>" class="action submit primary" id="custom_btn">
+                    <span><?php echo __('Search') ?></span>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+<?php if(array_key_exists('data', $result)): ?>
+<table class="table voucher-search-results">
+    <tbody>
+        <?php foreach($result['data'] as $item): ?>
+            <tr>
+                <td><?php echo $item['date']; ?></td>
+                <td><?php echo $item['status']; ?></td>
+            </tr>
+        <?php endforeach; ?> 
+    </tbody>
+</table>
+<?php endif; ?>

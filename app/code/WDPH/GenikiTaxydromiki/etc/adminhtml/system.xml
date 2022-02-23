@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<section id="wdph_genikitaxydromiki_general" translate="label" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+			<class>separator-top</class>
+			<label>Geniki Taxydromiki</label>
+			<tab>wdph_main</tab>
+			<resource>WDPH_GenikiTaxydromiki::general_settings</resource>
+			<group id="login" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Authentication</label>
+				<field id="api_url" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>API URL</label>
+                    <comment></comment>
+                </field>
+                <field id="appkey" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Application Key</label>
+                    <comment></comment>
+                </field>
+                <field id="username" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Username</label>
+                    <comment></comment>
+                </field>
+                <field id="password" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Password</label>
+                    <comment></comment>
+                </field>
+			</group>
+            <group id="general" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="delivery_method" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Shipping Method</label>
+                    <source_model>WDPH\GenikiTaxydromiki\Model\Config\Source\DeliveryMethod</source_model>
+                </field>
+                <field id="weight" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Weight</label>
+                    <comment></comment>
+                </field>
+            </group>
+		</section>
+	</system>
+</config>

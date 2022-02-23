@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <listingToolbar name="listing_top">
+            <massaction name="listing_massaction">
+                <action name="create_voucher">
+                    <argument name="data" xsi:type="array">
+                        <item name="config" xsi:type="array">
+                            <item name="type" xsi:type="string">create_voucher</item>
+                            <item name="label" xsi:type="string" translate="true">Create Voucher</item>
+                            <item name="url" xsi:type="url" path="genikitaxydromiki/index/massCreateVoucher"/>                           
+                        </item>
+                    </argument>
+                </action>
+                <action name="print_voucher">
+                    <argument name="data" xsi:type="array">
+                        <item name="config" xsi:type="array">
+                            <item name="type" xsi:type="string">print_voucher</item>
+                            <item name="label" xsi:type="string" translate="true">Print Voucher</item>
+                            <item name="url" xsi:type="url" path="genikitaxydromiki/index/massPrintVoucher"/>                            
+                        </item>
+                    </argument>
+                </action>
+                <action name="create_print_voucher">
+                    <argument name="data" xsi:type="array">
+                        <item name="config" xsi:type="array">
+                            <item name="type" xsi:type="string">create_print_voucher</item>
+                            <item name="label" xsi:type="string" translate="true">Create and Print Voucher</item>
+                            <item name="url" xsi:type="url" path="genikitaxydromiki/index/massCreatePrintVoucher"/>                            
+                        </item>
+                    </argument>
+                </action>
+            </massaction>
+    </listingToolbar>
+</listing>
